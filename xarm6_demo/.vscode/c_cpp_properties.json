@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/qq44642754/xarm6_neu/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/qq44642754/xarm6_neu/src/xarm6_demo/include/**",
+        "/home/qq44642754/xarm6_neu/src/xarm_ros/xarm_api/include/**",
+        "/home/qq44642754/xarm6_neu/src/xarm_ros/xarm_controller/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

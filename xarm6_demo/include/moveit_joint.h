@@ -1,7 +1,6 @@
-#ifndef MOVEIT_IK_H
-#define MOVEIT_IK_H
+#ifndef  MOVEIT_JOINT_H
+#define MOVEIT_JOINT_H
 
-#include <string>
 #include <ros/ros.h>
 #include <moveit/move_group_interface/move_group_interface.h>
 

@@ -1,4 +1,4 @@
-#include "moveit_ik.h"
+#include "moveit_joint.h"
 #include <iostream>
 
 using namespace std;
@@ -28,7 +28,6 @@ void MoveitIk ::goHome()
     moveit::planning_interface::MoveGroupInterface armgroup("xarm6");
     armgroup.setNamedTarget("home");
     armgroup.move();
-    armgroup.move();
 
 }
 
@@ -46,7 +45,7 @@ void MoveitIk ::initMove()
 
 int main (int argc, char **argv)
 {
-    ros::init(argc, argv, "moveit_ik");
+    ros::init(argc, argv, "moveit_joint");
     moveit::planning_interface::MoveGroupInterface armgroup("xarm6");
     //获取终端link的名称
     std::string end_effector_link = armgroup.getEndEffectorLink();

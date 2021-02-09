@@ -191,9 +191,11 @@ find_package(roslaunch)
 #   ${catkin_LIBRARIES}
 # )
 
-add_executable(moveit_ik src/moveit_ik.cpp)
-target_link_libraries(moveit_ik ${catkin_LIBRARIES})
+add_executable(moveit_joint src/moveit_joint.cpp)
+target_link_libraries(moveit_joint ${catkin_LIBRARIES})
 
+add_executable(moveit_line src/moveit_line.cpp)
+target_link_libraries(moveit_line ${catkin_LIBRARIES})
 
 ## Install ##
 #############
