@@ -3,35 +3,8 @@
 
 using namespace std;
 
-void MoveitLine::goSW()
+MoveitLine::MoveitLine(): armgroup("xarm6")
 {
-    moveit::planning_interface::MoveGroupInterface armgroup("xarm6");
-    target_pose = armgroup.getCurrentPose();
-    target_pose.pose.position.z += 0.3;
-    armgroup.setPoseTarget(target_pose);    
-    armgroup.move();
-}
-
-void MoveitLine::goHome()
-{
-    moveit::planning_interface::MoveGroupInterface armgroup("xarm6");
-    armgroup.setNamedTarget("home");
-    armgroup.move();
-}
-
-void MoveitLine::initMove()
-{
-    ros::AsyncSpinner spinner(1);
-    spinner.start();
-    goSW();
-    sleep(1);
-    goHome();
-}
-
-int main(int argc, char ** argv)
-{
-    ros::init(argc, argv, "moveit_lint");
-    moveit::planning_interface::MoveGroupInterface armgroup("xarm6");
     //获取终端link的名称
     std::string end_effector_link = armgroup.getEndEffectorLink();
 
@@ -49,6 +22,39 @@ int main(int argc, char ** argv)
     //设置允许的最大速度和加速度
     armgroup.setMaxAccelerationScalingFactor(0.1);
     armgroup.setMaxVelocityScalingFactor(0.1);
+
+}
+
+
+void MoveitLine::goSW()
+{
+    //moveit::planning_interface::MoveGroupInterface armgroup("xarm6");
+    target_pose = armgroup.getCurrentPose();
+    target_pose.pose.position.z += 0.3;
+    cout << target_pose << endl;
+    armgroup.setPoseTarget(target_pose);    
+    armgroup.move();
+}
+
+void MoveitLine::goHome()
+{
+    //moveit::planning_interface::MoveGroupInterface armgroup("xarm6");
+    armgroup.setNamedTarget("home");
+    armgroup.move();
+}
+
+void MoveitLine::initMove()
+{
+    ros::AsyncSpinner spinner(1);
+    spinner.start();
+    goSW();
+    sleep(1);
+    goHome();
+}
+
+int main(int argc, char ** argv)
+{
+    ros::init(argc, argv, "moveit_lint");
     MoveitLine move;
     while (ros::ok())
         {

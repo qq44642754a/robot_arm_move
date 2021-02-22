@@ -1,28 +1,25 @@
-#ifndef  MOVEIT_LINE_H
+#ifndef MOVEIT_LINE_H
 #define MOVEIT_LINE_H
 
 #include <ros/ros.h>
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <geometry_msgs/PoseStamped.h>
 
+class MoveitLine
+{
 
-class  MoveitLine{
+private:
+    moveit::planning_interface::MoveGroupInterface armgroup;
+    geometry_msgs::PoseStamped target_pose;
 
-    private:
-        geometry_msgs::PoseStamped target_pose;
+public:
+    MoveitLine();
 
-    public:
-    
-        void goSW();    //去某点
+    void goSW(); //去某点
 
-        void goHome();  //回到初始位置
+    void goHome(); //回到初始位置
 
-        void initMove();
-
-
-
+    void initMove();
 };
-
-
 
 #endif

@@ -197,6 +197,12 @@ target_link_libraries(moveit_joint ${catkin_LIBRARIES})
 add_executable(moveit_line src/moveit_line.cpp)
 target_link_libraries(moveit_line ${catkin_LIBRARIES})
 
+add_executable(door_open src/door_open.cpp)
+target_link_libraries(door_open ${catkin_LIBRARIES})
+
+add_executable(yolov3_grap src/yolov3_grap.cpp)
+target_link_libraries(yolov3_grap ${catkin_LIBRARIES})
+
 ## Install ##
 #############
 
